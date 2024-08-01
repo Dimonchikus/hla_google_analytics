@@ -1,6 +1,6 @@
 package com.googleanalytics;
 
-import static java.util.concurrent.TimeUnit.SECONDS;
+import static java.util.concurrent.TimeUnit.HOURS;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ public class ExchangeRateScheduler {
         this.analyticsSender = analyticsSender;
     }
 
-    @Scheduled(timeUnit = SECONDS, fixedDelayString = "10")
+    @Scheduled(timeUnit = HOURS, fixedDelayString = "1")
     public void rateExchangeTask() {
         var rate = ExchangeRateFetcher.getUsdToUahRate();
         System.out.println("Exchange rate rate: " + rate);
