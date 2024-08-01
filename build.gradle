@@ -1,0 +1,32 @@
+import static org.gradle.jvm.toolchain.JavaLanguageVersion.of
+
+plugins {
+    id 'java'
+}
+
+group = 'com.googleanalytics'
+version = '1.0-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = of(17)
+    }
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.3.2'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:3.3.2'
+    implementation 'org.json:json:20201115'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
