@@ -25,10 +25,8 @@ public class AnalyticsSender {
         String requestBody = "{"
             + "\"client_id\": \"" + CLIENT_ID + "\","
             + "\"events\": [{"
-            + "\"name\": \"add_payment_info\","
+            + "\"name\": \"UAH_USD\","
             + "\"params\": {"
-            + "\"from_currency\": \"USD\","
-            + "\"to_currency\": \"UAH\","
             + "\"exchange_rate\": " + exchangeRate
             + "}}]}";
 
